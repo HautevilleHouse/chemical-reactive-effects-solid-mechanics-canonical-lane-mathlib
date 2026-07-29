@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import ChemicalReactiveEffectsSolidMechanicsCanonicalLaneLean.ReactionKineticsBridge
+import ChemicalReactiveEffectsSolidMechanicsCanonicalLaneLean.ThermodynamicsEquilibrium
+import ChemicalReactiveEffectsSolidMechanicsCanonicalLaneLean.MolecularOrbitalTheory
+import ChemicalReactiveEffectsSolidMechanicsCanonicalLaneLean.SolidMechanicsEffect
+
+namespace HautevilleHouse
+namespace ChemicalReactiveEffectsSolidMechanicsCanonicalLaneLean
+
+def ChemicalReactiveEffectsSolidMechanicsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem chemical_reactive_effects_solid_mechanics_endgame (A : AdmissibleClass) :
+    ChemicalReactiveEffectsSolidMechanicsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ChemicalReactiveEffectsSolidMechanicsCanonicalLaneLean
+end HautevilleHouse
